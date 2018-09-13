@@ -1,0 +1,5 @@
+haochong
+TonZgF5B3NXfRpXU
+
+cd udemy/mongodb/bin
+./mongo "mongodb+srv://cluster0-ceqod.mongodb.net/test" --username haochong
