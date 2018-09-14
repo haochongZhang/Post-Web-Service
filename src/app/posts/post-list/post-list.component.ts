@@ -17,14 +17,17 @@ export class PostListComponent implements OnInit, OnDestroy {
   ]; */
   posts: Post[] = [];
   private postsSub: Subscription;
+  isLoading = false;
 
   // The 'public' keyword will automatically add property to class
   constructor(public postsService: PostService) {}
 
   ngOnInit() {
+    this.isLoading = true;
     this.postsService.getPosts();
     this.postsSub = this.postsService.getPostUpdatedListener()
       .subscribe((posts: Post[]) => {
+        this.isLoading = false;
         this.posts = posts;
       });
   }
